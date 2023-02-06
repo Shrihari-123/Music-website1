@@ -1,0 +1,133 @@
+<html>
+<head>
+    <title>Music Website</title> 
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <script src="app.js"></script>
+</head> 
+
+<body>
+<div class="container">
+    
+    <div class="navbar">
+        <img src="SK CODER.png" class="logo">
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li> 
+            <li><a href="artist.html">ARTISTS</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul> 
+    </div>
+    <div class="content">
+        <div class="left-col"> 
+            <h1>THE<br>REAL<br>SOUND</h1>
+        </div>
+            <div class="right-col">
+                <p>Click here to listen</p>
+                <img src="Previousbutton.svg" id="prevButton">
+                <img src="Playbutton.png" id="icon">
+                <img src="Nextbutton.svg" id="nextButton">
+
+                <div id="seekbarContainer">
+                    <input type="range" min="0" max="100" value="0" id="seekbar">
+                    <span id="current-time"></span> / <span id="duration"></span>
+                </div>  
+            </div>
+    </div>
+    
+
+</div>
+
+
+    <audio id="mySong">
+        <source src="Thee_Thalapathy.mp3" type="audio/mp3">
+        <source src="Kesariya.mp3" type="audio/mp3">
+        <source src="Putt_Jatt_Da.mp3" type="audio/mp3">
+        <source src="On_My_Way.mp3" type="audio/mp3">
+    </audio>
+    
+    
+        
+    <script>
+        var mySong = document.getElementById("mySong"); 
+        var icon = document.getElementById("icon");
+        const prevButton = document.getElementById("prevButton");
+        const nextButton = document.getElementById("nextButton");
+        var songs = [
+            { src: "Thee_Thalapathy.mp3", type: "audio/mp3" },
+            { src: "Kesariya.mp3", type: "audio/mp3" },
+            { src: "Putt_Jatt_Da.mp3", type: "audio/mp3" },
+            { src: "On_My_Way.mp3", type: "audio/mp3" },
+        ];
+        var currentSong = 0;
+        icon.onclick= function(){
+            if(mySong.paused){
+                mySong.play();
+                icon.src = "Pausebutton.png"
+            }else{
+                mySong.pause();
+                icon.src = "Playbutton.png"
+            }
+        }
+
+
+        prevButton.addEventListener("click", function() {
+        currentSong--;
+        if (currentSong < 0) {
+            currentSong = songs.length - 1;
+        }
+        mySong.src = songs[currentSong].src;
+        
+        mySong.play();
+        mySong.currentTime = 0;
+        icon.src = "Pausebutton.png";
+        mySong.onloadedmetadata = function() {
+        durationDisplay.innerHTML = formatTime(mySong.duration);
+        seekbar.value = 0;
+        };
+        
+        });
+
+        nextButton.addEventListener("click", function() {
+        currentSong++;
+        if (currentSong >= songs.length) {
+            currentSong = 0;
+        }
+        mySong.src = songs[currentSong].src;
+        seekbar.value = 0;
+        mySong.play();
+        mySong.currentTime = 0;
+        icon.src = "Pausebutton.png";
+        mySong.onloadedmetadata = function() {
+        durationDisplay.innerHTML = formatTime(mySong.duration);
+        seekbar.value = 0;
+        };
+        
+        });
+
+        const seekbar = document.getElementById("seekbar");
+        const currentTimeDisplay = document.getElementById("current-time");
+        const durationDisplay = document.getElementById("duration");
+        currentTimeDisplay.innerHTML = "0:00";
+        durationDisplay.innerHTML = "0:00";
+        mySong.ontimeupdate = function() {
+        seekbar.value = (mySong.currentTime / mySong.duration) * 100;
+        currentTimeDisplay.innerHTML = formatTime(mySong.currentTime);
+        durationDisplay.innerHTML = formatTime(mySong.duration);
+        };
+        seekbar.oninput = function() {
+        mySong.currentTime = (seekbar.value * mySong.duration) / 100;
+        };
+
+        function formatTime(time) {
+            const minutes = Math.floor(time / 60);
+            const seconds = Math.floor(time % 60);
+            return minutes + ":" + (seconds < 10 ? "0" + seconds : seconds);
+        }
+
+
+        
+    </script>
+
+</body> 
+</html>

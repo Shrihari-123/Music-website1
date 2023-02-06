@@ -1,0 +1,278 @@
+*{
+    margin: 0;
+    padding: 0; 
+    font-family: sans-serif;
+}
+
+.container{
+    height: 100vh;
+    width: 100%;
+    background-image: url(background.jpg);
+    background-size: cover; 
+    background-position: center;
+    position: relative;
+} 
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    align-items: center;
+    background-color: black;
+}
+
+.logo{
+    width: 60px; /* adjust the width to match your image */
+    height: 60px; /* adjust the height to match your image */
+    padding: 10px;
+    cursor: pointer;
+    
+    
+}
+
+.navbar ul li{ 
+    list-style: none; 
+    display: inline-block; 
+    margin: 0 15px;
+    
+    
+}
+
+.navbar ul li a{
+    text-decoration: none; 
+    color: white; 
+    font-size: 15px; 
+    font-weight: bold;
+    
+}
+
+.content {
+    width: 100%;
+    position: absolute; 
+    top: 30%;
+}
+    
+.left-col{
+    margin-left: 6%;
+}
+    
+.left-col h1{
+    font-size: 90px; 
+    color: #fff;
+    line-height: 110px;
+    float: left;
+}
+
+#icon{
+    width: 50px; /* adjust the width to match your image */
+    height: 50px; /* adjust the height to match your image */
+    cursor: pointer; /* change the cursor to a clickable hand */
+}
+
+#prevButton{
+    width: 35px; /* adjust the width to match your image */
+    height: 35px; /* adjust the height to match your image */
+    cursor: pointer; /* change the cursor to a clickable hand */
+    Padding: 10px;
+}
+
+#nextbutton{
+    width: 35px; /* adjust the width to match your image */
+    height: 35px; /* adjust the height to match your image */
+    cursor: pointer; /* change the cursor to a clickable hand */
+    Padding: 10px;
+}
+
+.right-col{
+    float: right;
+    margin-right: 6%; 
+    margin-top: 120px;
+    display: flex; 
+    align-items: center;
+}
+
+.right-col p{
+    font-size: 18px; 
+    color: #d1111b;
+    font-weight: 400; 
+    margin-right: -155px;
+    margin-bottom: 120px;
+    padding: 0px;
+}
+
+/* .Action-Btn {
+    Background-Color: #000000;
+    Border: 0;
+    Color: #f6f6;
+    Font-Size: 20px;
+    Cursor: Pointer;
+    Padding: 10px;
+    Margin: 0 20px;
+    } */
+
+#seekbar {
+    
+    margin-top: 100px;
+    margin-left: -145px;
+}
+
+
+/* artist page */
+#artists {
+    height: 100vh;
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+    background-size: cover; 
+    background-color: violet;
+    
+  }
+  
+  #artists h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+  
+  .artist-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .artist-card {
+    width: 300px;
+    height: 400px;
+    margin: 20px;
+    text-align: center;
+  }
+  
+  .artist-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .artist-card h3 {
+    font-size: 24px;
+    margin: 20px 0 10px 0;
+    
+   text-align: center;
+  }
+  
+  .artist-card p {
+    font-size: 16px;
+    color: gray;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .artist-card a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: lightgray;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+
+  }
+  
+
+  /* contact form */
+  #contact {
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    padding: 50px 0;
+    background-color: lightpink;
+    background-size: cover;
+  }
+  
+  #contact form {
+    width: 60%;
+    margin: 0 auto;
+    text-align: left;
+  }
+  
+  #contact form div {
+    margin-bottom: 20px;
+  }
+  
+  #contact form label {
+    display: block;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  #contact form input[type="text"],
+  #contact form input[type="email"],
+  #contact form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2em;
+    border: 1px solid gray;
+    border-radius: 5px;
+  }
+  
+  #contact form button[type="submit"] {
+    background-color: lightgray;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1.2em;
+  }
+  
+/* About page */
+#song {
+  height: 100vh;
+  width: 100%;
+  padding: 30px;
+  text-align: center;
+  background: #12c2e9;
+  background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+  background-size: cover; 
+  
+  
+}
+
+
+#song h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.song-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.song-card {
+  width: 200px;
+  height: 300px;
+  margin: 20px;
+  text-align: center;
+}
+
+.song-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.song-card h3 {
+  font-size: 24px;
+  margin: 20px 0 10px 0;
+  
+ text-align: center;
+}
+
+.song-card p {
+  font-size: 16px;
+  color: red;
+  margin-bottom: 20px;
+  text-align: center;
+}
